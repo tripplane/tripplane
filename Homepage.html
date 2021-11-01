@@ -1,81 +1,46 @@
 <!DOCTYPE html>
 <html lang="he-IL">
 <head>
-    <link rel="stylesheet" href="Homepage.css">
-    <title>Trip-Plan</title>
-    <div class="logo" >
-      <img class="logo" src="IMG_0782.jpg">
-    </div>
-    <style>
-       div.gallery {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  margin-top: 50px;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-
-* {
-  box-sizing:border-box;
-}
-
-.responsive {
-  padding: 0 6px;
-  float:left;
-  width: 20.99999%;
-  margin-left: 3.2%;
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-    </style>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="pagestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Plan</title>
 </head>
 <body>
+    
 
-<!-- horizontal nav bar -->
-<div class="Topnav">
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#news">News</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-</div>
+    <div class="topnav" id="myTopnav">
+        <img class="logo" src="IMG_0782.png" alt="logo">
+        <div class="gap"><a></a></div>
+        <a class="active" href="homepage.html">דף הבית</a>
+        <a href="therapy.html">סיורים</a>
+        <a href="readview.html">אודות</a>
+        <a href="store.html">חנות</a>
+        <a href="contact.html">צרו קשר</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i>
+        </a>
+      </div>
 
-<!-- Slideshow container -->
+      <!-- Slideshow container -->
 <div class="slideshow-container">
 
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
       <div class="numbertext">1 / 3</div>
-      <img src="dino-reichmuth-A5rCN8626Ck-unsplash.jpg" style="width:100%" height="500px">
+      <img class="images" src="luca-bravo-O453M2Liufs-unsplash.jpg" width="100%" height="800px">
       <div class="text">Caption Text</div>
     </div>
   
     <div class="mySlides fade">
       <div class="numbertext">2 / 3</div>
-      <img src="luca-bravo-O453M2Liufs-unsplash.jpg" style="width:100%" height="500px">
+      <img class="images" src="s-migaj-Yui5vfKHuzs-unsplash.jpg" width="100%" height="800px">
       <div class="text">Caption Two</div>
     </div>
   
     <div class="mySlides fade">
       <div class="numbertext">3 / 3</div>
-      <img src="s-migaj-Yui5vfKHuzs-unsplash.jpg" style="width:100%" height="500px">
+      <img class="images" src="dino-reichmuth-A5rCN8626Ck-unsplash.jpg" width="100%" height="800px">
       <div class="text">Caption Three</div>
     </div>
   
@@ -87,66 +52,28 @@ div.desc {
   
   <!-- The dots/circles -->
   <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span> 
-    <span class="dot" onclick="currentSlide(2)"></span> 
-    <span class="dot" onclick="currentSlide(3)"></span> 
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
   </div>
-  <br> <!--space-->
-  <hr> <!--space bar-->
-  <center>
-    <div class="text-hp">
+
+ 
+
+  <div class="text1">
+      <div class="header">
       <h1>מי אנחנו?</h1>
-      <p>רשות הטבע והגנים היא הרשות הממשלתית האמונה מטעם החוק הישראלי על שמירת ערכי הטבע והמורשת במדינה. הרשות, הכפופה למשרד להגנת הסביבה, אחראית על ניהול שמורות הטבע והגנים הלאומיים, וכן על אכיפת חוקי שמירת הטבע בשטחים הפתוחים. לצד זה היא מפעילה מרכזי חינוך והסברה וחטיבת מדע.</p>
     </div>
-  </center>
-
-  <br>
-  <hr>
-  
-
-  <!-- Second Photo Grid-->
-  <div class="responsive">
-    <div class="gallery">
-        <img src="luca-bravo-O453M2Liufs-unsplash.jpg" alt="yael" width="600" height="400">
-      </a>
-      <div class="desc">Add a description of the image here</div>
+     <p>
+        רשות הטבע והגנים (בראשי תיבות: רט"ג) היא הרשות הממשלתית האמונה מטעם החוק הישראלי על שמירת ערכי הטבע והמורשת במדינה. הרשות, הכפופה למשרד להגנת הסביבה, אחראית על ניהול שמורות הטבע והגנים הלאומיים, וכן על אכיפת חוקי שמירת הטבע בשטחים הפתוחים. לצד זה היא מפעילה מרכזי חינוך והסברה וחטיבת מדע.
+הרשות היא איחוד בין שתי רשויות קודמות - "רשות שמורות הטבע" ו"רשות הגנים הלאומיים", שהוקמו בשנת 1964. שתי הרשויות אוחדו בשנת 1998[2]. הרשות המאוחדת נקראה תחילה "הרשות לשמירת הטבע והגנים הלאומיים", ולאחר מכן קוצר השם.</p>
     </div>
-  </div>
-  
-  
-  <div class="responsive">
-    <div class="gallery">
-        <img src="s-migaj-Yui5vfKHuzs-unsplash.jpg" alt="Forest" width="600" height="400">
-      </a>
-      <div class="desc">Add a description of the image here</div>
-    </div>
-  </div>
-  
-  <div class="responsive">
-    <div class="gallery">
-        <img src="dino-reichmuth-A5rCN8626Ck-unsplash.jpg" alt="Northern Lights" width="600" height="400">
-      </a>
-      <div class="desc">Add a description of the image here</div>
-    </div>
-  </div>
-  
-  <div class="responsive">
-    <div class="gallery">
-        <img src="luca-bravo-O453M2Liufs-unsplash.jpg" alt="Mountains" width="600" height="400">
-      </a>
-      <div class="desc"> <b>יעקוב ג׳ייקובסון</b>
-          מייסד ודובר העמותה
-      </div>
-    </div>
-  </div>
-  
-  <div class="clearfix"></div>
-  
-  <div style="padding:6px;">
 
+    <footer>
+        <p>כאן תרשמו מה שאתם רוצים</p>
+        <hr>
+        <p>ותשחקו עם העיצוב</p>
+    </footer>
 
-  <script src="Homepage.js"></script>
-
+  <script src="homepage.js"></script>
 </body>
 </html>
-
