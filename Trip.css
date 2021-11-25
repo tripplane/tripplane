@@ -1,0 +1,30 @@
+
+.TripArea{
+    margin-top: 100px;
+    display: flex;
+}
+
+.AreaOne{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: 50px;
+    width: 27%;
+    border-radius: 15px 50px;
+    text-align: center  ;
+    font-size: 23px;
+}
+
+.TripArea2{
+    margin-top: 0px;
+    display: flex;
+}
+
+.AreaOne2{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: 50px;
+    width: 27%;
+    border-radius: 15px 50px;
+    text-align: center  ;
+    font-size: 23px;
+}
