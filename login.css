@@ -1,0 +1,141 @@
+
+.info{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-top: 13%;
+    border-radius: 15px 50px;
+    padding: 0px 50px 20px 50px;
+    font-size: 15px;
+    height: 100px;
+    width: 70%;
+}
+
+.header
+{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: rgb(77, 136, 66);
+    padding: 5px 50px 5px 50px;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    margin-bottom: -30px;
+}
+
+.und_header
+{
+    color: white;
+    margin-top: 30px;
+    border-radius: 15px 50px;
+    padding: 0px 50px 20px 50px;
+    font-size: 20px;
+}
+
+.wrong{
+    background-color: rgb(226, 84, 84);
+    width: 40%;
+    border-radius: 10px;
+    visibility:hidden;
+}
+
+.pass
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40%;
+    border-radius: 10px;
+    visibility:hidden;
+    position: relative;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes example {
+    0% {background-color:rgb(101, 184, 126); left:0px; top:-50px;}
+    50% {background-color:rgb(101, 184, 126); left:0px; top:-190px;}
+    75% {background-color:rgb(101, 184, 126); left:0px; top:-250px;}
+    100% {background-color:rgb(101, 184, 126); left:0px; top:-300px;}
+
+}
+
+
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 7px;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra style for the cancel button (red) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the avatar image inside this container */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  /* Avatar image */
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+    margin-top: 5%;
+    width: 70%;
+    background-color:rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    opacity: 0.9;
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
