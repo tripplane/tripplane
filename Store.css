@@ -1,0 +1,30 @@
+#header{
+    background: linear-gradient(-45deg, #4668a8, #5aa89b, #23a6d5, #2ab83d);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 20vh; 
+}
+
+#header1{
+    background-color:rgb(236, 236, 236) ;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+body{
+    direction: rtl;
+}
+
+.img{
+height: 90%;
+}
