@@ -70,16 +70,16 @@
         <div class="mt-4 p-5 bg-dark text-info rounded">
           <h1>הירשם לאתר</h1> 
           <p>הירשם לאתר וקבל את כול העדכונים בזמן אמת</p>
-          <form>
+          <form action="http://localhost:3000/register" method="post"  onsubmit="window.open('Login.html', '_blank', 'scrollbars=no,menubar=no,height=600,width=800,resizable=yes,toolbar=no,status=no');return true;">
             <div class="mb-3 mt-3">
-              <label for="email" class="form-label">שם משתמש:</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter user name" name="email">
+              <label for="" class="form-label">שם משתמש:</label>
+              <input id="usrr" type="" class="form-control"  placeholder="Enter user name" name="user">
             </div>
             <div class="mb-3">
               <label for="pwd" class="form-label">סיסמא:</label>
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+              <input id="psww" type="password" class="form-control" placeholder="Enter password" name="password">
             </div>
-            <button type="submit" class="btn btn-primary">התחבר</button>
+            <button type="submit"  class="btn btn-primary">הירשם</button>
           </form>
         </div>
       </div>
