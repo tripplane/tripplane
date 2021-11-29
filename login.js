@@ -1,14 +1,15 @@
 var mysql = require('mysql');  
 const express = require('express');
 var app = express();
-const bodyparser = require('body-parser');
-
+const bodyParser = require('body-parser');
 var cors = require('cors');
 
 // use it before all route definitions
 app.use(cors({origin: '*'}));  //enable cross origin requests
 
-app.use(bodyparser.json());    //use json format as respone from the DB
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 var con = mysql.createConnection({   //create connection to the DB
   host: "localhost",
@@ -37,5 +38,16 @@ app.get('/login',(req, res)=>{
     console.log(err);
   })
 });
+
+app.post('/register',(req, res)=>{
+  var sql = 'INSERT INTO login (user,password) VALUES ?';
+  var values =[[req.body.user,req.body.password]];
+  con.query(sql,[values],(err,rows,_fields)=>{
+    res.send("Respone: the registeration completed OK")
+  })
+});
+
+
+
 
 
