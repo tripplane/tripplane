@@ -5,13 +5,29 @@
   <link rel="icon" href="Pictures/IMG_0782.jpg">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
   <link href="Trips.css" rel="stylesheet">
   
 </head>
-<body id="header1">
+<body onload="handicapped()" id="header1">
 
     <nav class="navbar navbar-expand bg-dark navbar-dark">
         <div class="container-fluid">
@@ -66,7 +82,20 @@
 </div>
 <hr>
 
-<div class="container p-5 my-5 bg-dark text-white">
+<div><a href="javascript:void(0);" class="access"  onclick="openList1()"><i class="fa fa-wheelchair"></i></div>
+
+  <ol id="ollist">
+    <li><a href="javascript:void(0);"  onclick="fontsize()"><i>הגדל טקסט</i></li>
+    <li><a href="javascript:void(0);"  onclick="fontsized()"><i>הקטן טקסט</i></li>
+    <li><a href="javascript:void(0);"  onclick="grey()"><i>גווני אפור</i></li>
+    <li><a href = "javascript:void(0);"  onclick="contrast()"><i>ניגודיות גבוהה</i></li>
+    <li><a href = "javascript:void(0);"  onclick="invert()"><i>ניגודיות הפוכה</i></li>
+    <li><a href = "javascript:void(0);"  onclick="font()"><i> פונט קריא</i></li>
+    <li><a href = "Trips.html">איפוס</a></li>
+  </ol>
+  
+
+<div id="container" class="container p-5 my-5 bg-dark text-white">
     <center>
       <h1>צפון</h1>
       <hr>
@@ -121,7 +150,7 @@
   </div>
   </div>
 
-  <div class="container p-5 my-5 bg-dark text-white">
+  <div id="container1" class="container p-5 my-5 bg-dark text-white">
     <center>
     <h1>מרכז</h1>
     <hr>
@@ -176,7 +205,7 @@
    </div>
   </div>
 
-  <div class="container p-5 my-5 bg-dark text-white">
+  <div id="container2" class="container p-5 my-5 bg-dark text-white">
     <center>
     <h1>דרום</h1>
     <hr>
@@ -244,7 +273,7 @@
 </div>
 
   <!--trips for Disabled people-->
-  <div class="container p-5 my-5 bg-dark text-white">
+  <div id="container3" class="container p-5 my-5 bg-dark text-white">
     <center>
     <h1>מסלולים מונגשים לנכים ובעלי מוגבלויות</h1>
     <hr>
@@ -297,6 +326,30 @@
   </div>
    </div>
   
+
+
+  <div class="container mt-3">
+    <div class="mt-4 p-5 bg-dark text-white rounded">
+      <center>
+        <i style="font-size:36px" class="fa">&#xf232;</i>
+        <div class="dropdown">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            שתף סיורים דרך הוואצאפ
+          </button>
+          <div class="dropdown-menu">
+           <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/Kziv.html" data-action="share/whatsapp/share" target="_blank">נחל כזיב</a>
+           <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/Dan.html" data-action="share/whatsapp/share" target="_blank">נחל דן</a>
+           <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/Darga.html" data-action="share/whatsapp/share" target="_blank">דרגה</a>
+           <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/EinGedi.html" data-action="share/whatsapp/share" target="_blank">עין גדי</a>
+           <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/ElAl.html" data-action="share/whatsapp/share" target="_blank">אל על</a>
+           <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/Gezer.html" data-action="share/whatsapp/share" target="_blank">גזר</a>
+           <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/BenShemen.html" data-action="share/whatsapp/share" target="_blank">בן שמן</a>
+           <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/RamonCarter.html" data-action="share/whatsapp/share" target="_blank">מכתש רמון</a>
+           <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/TimnaValley.html" data-action="share/whatsapp/share" target="_blank">פארק תמנע</a>
+        </div>
+     </center>
+    </div>
+</div>
 
   <!--footer-->
  <div id="header" class="mt-5 p-4  text-white text-center">
@@ -366,9 +419,14 @@
     <a class="text-white" href="https://mdbootstrap.com/">TripPLan</a>
   </div>
   </div>
+<<<<<<< HEAD
 
   <script src="Trips.js"></script>
 
+=======
+<script src='Main.js'></script>
+<script src = "handicapped.js"></script>
+>>>>>>> 383750b1f1da03135dfe0a241f83ad20aac6797f
 </body>
 </html>
 

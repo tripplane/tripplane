@@ -10,13 +10,3 @@ function post(){
     return (0)
 }
 
-function post_test1(){   //test function except to get 0
-    var x = "ofri"
-    var y = "yovel"
-    if(x!="" && y!=""){
-    var d = new Date();
-    return 0;
-    }
-    return 1;
-}
-module.exports = post_test1;
