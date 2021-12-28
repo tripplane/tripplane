@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TripPLan</title>
+  <link rel="icon" href="Pictures/IMG_0782.jpg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="index.css" rel="stylesheet">
+  
+</head>
+
+
+<body id="header1">
+        <nav  class="navbar navbar-expand bg-dark navbar-dark">
+            <div  class="container-fluid">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link" href="index.html">דף הבית</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="Trips.html">סיורים</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="Store.html">חנות</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.html">אודות</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " href="comment.html">צור קשר</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " href="Login.html">התחברות</a>
+                      </li>
+                </ul>
+                <body>
+                    <div style = "position:relative; left:0px; top:2px;">
+                      <a class="nav-link" href="index.html"><img src="Pictures/IMG_0782.jpg" alt="Logo" style="width:40px; height: 30px;" ></a>
+                    </div>
+                  </body>
+            </div>
+        </nav>
+       
+        
+        <div id="header" class="container-fluid p-5  text-white text-center">
+            <h1>שלום פקח</h1>
+            
+        </div>
+        
+        
+    
+
+    <div class="container mt-3">
+        <div class="mt-4 p-5 bg-dark text-white rounded">
+          <center>
+            <h3>התראת פקח</h3> 
+            <p class="" id="post"></p>
+            <div class="container mt-3">
+              <div class="mb-3 mt-3">
+                <textarea class="form-control" rows="3" id="comment" name="text"></textarea>
+              </div>
+              <input type="text" id="name" class="form-control form-control-sm" placeholder="הכנס שם">
+              <br>
+              <button type="submit" onclick="writesuper('Super/')" class="btn btn-primary">פרסם התראה בעמוד הבית</button>
+             </div>
+             <br>
+             <button type="submit" onclick="remove()" class="btn btn-danger"> מחק את כול ההתראות</button>
+         </center>
+        </div>
+    </div>
+
+
+    <div class="container mt-3">
+      <div class="mt-4 p-5 bg-dark text-white rounded">
+        <center>
+          <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              שתף סיורים דרך הוואצאפ
+            </button>
+            <div class="dropdown-menu">
+             <a  class="dropdown-item"  href="whatsapp://send?text=https://tripplane1234.herokuapp.com/Kziv.html" data-action="share/whatsapp/share" target="_blank">נחל כזיב</a>
+             <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/Dan.html" data-action="share/whatsapp/share" target="_blank">נחל דן</a>
+             <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/Darga.html" data-action="share/whatsapp/share" target="_blank">דרגה</a>
+             <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/EinGedi.html" data-action="share/whatsapp/share" target="_blank">עין גדי</a>
+             <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/ElAl.html" data-action="share/whatsapp/share" target="_blank">אל על</a>
+             <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/Gezer.html" data-action="share/whatsapp/share" target="_blank">גזר</a>
+             <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/BenShemen.html" data-action="share/whatsapp/share" target="_blank">בן שמן</a>
+             <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/RamonCarter.html" data-action="share/whatsapp/share" target="_blank">מכתש רמון</a>
+             <a  class="dropdown-item" href="whatsapp://send?text=https://tripplane1234.herokuapp.com/TimnaValley.html" data-action="share/whatsapp/share" target="_blank">פארק תמנע</a>
+          </div>
+       </center>
+      </div>
+  </div>
+
+
+  <div class="container mt-3">
+    <div class="mt-4 p-5 bg-dark text-white rounded">
+      <center>
+        <h3>דווח על שגיאה בנתונים:</h3> 
+        <p class="" id="post"></p>
+        <div class="container mt-3">
+          <div class="mb-3 mt-3">
+            <textarea class="form-control" rows="3" id="message" name="text"></textarea>
+          </div>
+          <br>
+          <button type="submit" onclick="send_email_super()" class="btn btn-primary">פרסם נתונים באמצעות אימייל</button>
+         </div>
+     </center>
+    </div>
+</div>
+
+        
+    <div id="header" class="mt-5 p-4  text-white text-center">
+        <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #3b5998;"
+                href="#!"
+                role="button"
+                ><i class="fa fa-facebook-f"></i
+                ></a>
+        
+                <!-- Twitter -->
+                <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #55acee;"
+                href="#!"
+                role="button"
+                ><i class="fa fa-twitter"></i
+                ></a>
+        
+                <!-- Google -->
+                <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #dd4b39;"
+                href="#!"
+                role="button"
+                ><i class="fa fa-google"></i
+                ></a>
+        
+                <!-- Instagram -->
+                <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #ac2bac;"
+                href="#!"
+                role="button"
+                ><i class="fa fa-instagram"></i
+                ></a>
+        
+                <!-- Linkedin -->
+                <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #0082ca;"
+                href="#!"
+                role="button"
+                ><i class="fa fa-linkedin"></i
+                ></a>
+                <!-- Github -->
+                <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #333333;"
+                href="#!"
+                role="button"
+                ><i class="fa fa-github"></i
+                ></a>
+            </section>
+        <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2021 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">TripPLan</a>
+        </div>
+    </div>
+    
+    <script src="Main.js"></script>
+    <script src="contact.js"></script>
+    
+
+
+</body>
+</html>

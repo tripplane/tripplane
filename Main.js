@@ -1,33 +1,130 @@
-var connected;
-var connected1;
+// Import the functions you need from the SDKs you need
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-function submit(){
-    const xhttp = new XMLHttpRequest(); //create new object of Ajax
-    xhttp.onload = function() {
-    console.log(this.responseText);  //get the respone from the server
-    const respone = JSON.parse(this.responseText);
-    console.log(respone);
-    var x = document.getElementById("usr").value; //get elements from user
-    var y = document.getElementById("psw").value;
-    console.log(x,y)
-    for(let i = 0;i<respone.length;i++){   //verifying the inputs agaunst the server respone
-      if(respone[i].user == x && respone[i].password==y){
-         document.getElementById("connected").innerHTML = "Welcome: " + x;
-         document.getElementById("connected_1").innerHTML = "Now you can get information and leave a comments";
-         document.getElementById("1").style.visibility="hidden";
-         document.getElementById("2").style.visibility="hidden";
-         document.getElementById("3").style.visibility="hidden";
-         document.getElementById("submit").innerHTML = "<p>You are connected</p>"
-         connected=x;
-         connected1=true;
-      }
-    }
-    if(connected1!=true){ //if the arguments dont match there will display message
-        document.getElementById("submit").innerHTML = "<p>Wrong password or username try again</p>"
-    }
-    }
-    xhttp.open("GET", "http://localhost:3000/login", true);  //Ajax GET request send
-    xhttp.send(); //send
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyC3SCYZJcOXIFbehwLKeHs3ik12Ei3ydXI",
+  authDomain: "tripplan-f57b9.firebaseapp.com",
+  projectId: "tripplan-f57b9",
+  storageBucket: "tripplan-f57b9.appspot.com",
+  messagingSenderId: "831519765604",
+  appId: "1:831519765604:web:5ce5b8b493ff215c239b71",
+  measurementId: "${config.measurementId}"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+  const auth =  firebase.auth();
+  var firebaseRef = firebase.database().ref("dan");
+
+
+
+function sign_up(){
+    var x =document.getElementById("usrr").value;
+    var y =document.getElementById("psww").value;
+    const promise = auth.createUserWithEmailAndPassword(x,y);
+    promise.catch(e=>alert(e.message));
+    alert("SignUp Successfully");
+}
+
+
+function  signIn(){
+    var x = document.getElementById("usr").value;
+    var y  = document.getElementById("psw").value;
+    const promise = auth.signInWithEmailAndPassword(x,y).then(function(user) {
+      localStorage.setItem("user",user.user.email);
+      window.location = 'index.html';
+    })
+    promise.catch(e=>alert(e.message));
+    //window.location = 'index.html';
   }
 
 
+  function user(){
+      supervisorread();
+      if(localStorage.getItem("user")!=null){
+        document.getElementById("logout").className = "nav-link active";
+        var name = localStorage.getItem("user");
+        document.getElementById("update").innerHTML= "אתה מחובר כ: " + name;
+        if(localStorage.getItem("user")=="admin@gmail.com"){
+          document.getElementById("admin").style.visibility = "visible";
+        }
+        if(localStorage.getItem("user")=="super@gmail.com"){
+          document.getElementById("super").style.visibility = "visible";
+        }
+      }
+  }
+
+
+  function handicapped(){
+    if(localStorage.getItem("user")=="handicapped@gmail.com"){
+        window.location = 'handicap.html';
+    }
+  }
+
+  function logout(){
+   localStorage.clear();
+   document.getElementById("logout").className = "nav-link";
+}
+
+
+
+function dan(name){
+  if(localStorage.getItem("user")=="super@gmail.com"){
+     document.getElementById("name").value = "פקח רשות הטבע והגנים";
+  }
+  var starCountRef = firebase.database().ref(name);
+  starCountRef.on('value',function(snapshot){
+    snapshot.forEach(function(userSnapshot){
+      console.log(userSnapshot.val());
+       document.getElementById("post").innerHTML += (userSnapshot.val().username + ": " + userSnapshot.val().post + "<br>");
+    })
+  });
+}
+
+function writeUserData(name) {
+    if(document.getElementById("comment").value == "" && document.getElementById("name").value==""){
+      alert("you have to fill the box");
+      return;
+    }
+    var x = document.getElementById("name").value;
+    var y = document.getElementById("comment").value;
+    firebase.database().ref(name  + x ).set({
+      username: x,
+      post: y,
+    });
+    location.reload();
+  }
+
+
+  function writesuper(name) {
+    if(document.getElementById("comment").value == "" && document.getElementById("name").value==""){
+      alert("you have to fill the box");
+      return;
+    }
+    var x = document.getElementById("name").value;
+    var y = document.getElementById("comment").value;
+    firebase.database().ref(name  + x ).set({
+      username: x,
+      post: y,
+    });
+    window.location="index.html";
+  }
+  
+
+  function supervisorread(){
+    var starCountRef = firebase.database().ref('Super/');
+    starCountRef.on('value',function(snapshot){
+      snapshot.forEach(function(userSnapshot){
+        console.log(userSnapshot.val());
+         document.getElementById("supervisor").innerHTML += ( "מבזקים : " + userSnapshot.val().post + "<br>");
+      })
+    });
+  }
+  
+  function remove() {
+    firebase.database().ref('Super/').remove();
+    window.location="index.html";
+  }
